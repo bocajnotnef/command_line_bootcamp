@@ -25,4 +25,8 @@ cd command_line_bootcamp
 npm install
 
 npm run build && npm run fixcolor && npm run render
+
 # now serve the directory!
+
+rm /var/www/html/index.html
+cp -R command_line_bootcamp/ /var/www/html/

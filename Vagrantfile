@@ -6,7 +6,8 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 
-$expose_ui = 8080
+$expose_ui = 5050
+$expose_socket = 8080
 
 Vagrant.configure(2) do |config|
   # The most common configuration options are documented and commented below.
@@ -19,7 +20,9 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, path: "bootstrap.sh"
 
   # expose the bootcamp
-  config.vm.network 'forwarded_port', guest: 8080, host: $expose_ui, auto_correct: true
+  config.vm.network 'forwarded_port', guest: 8080, host: $expose_socket, auto_correct: true
+  config.vm.network 'forwarded_port', guest: 80, host: $expose_ui, auto_correct: true
+
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
