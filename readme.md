@@ -1,68 +1,22 @@
-# Command-line bootcamp
+# SSH Bootcamp
 
-Learn the unix command-line by using it in your browser.
+Learn the unix command-line (and other useful remote things) by using it in your browser.
 
-### build and deploy the frontend
+Originally from https://github.com/blahah/command_line_bootcamp
 
-You'll need node.js
+## Build and Deploy
 
-```bash
-# install and set up nvm and node
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
-source ~/.bashrc
+I've modified the original repo somewhat so as to easily deploy/run this on a server--Useful for
+workshops, etc.
 
-# some dependencies don't work with node 1+, so stick with 0.12
-nvm install 0.12
-nvm use 0.12
+You'll need an ubuntu machine with Docker, git, node, apache2, cmake, g++ and build-essential
+installed.
+
+SSH into your box and do the following:
+
 ```
-
-Once you've got node installed, grab this repo and let node install the dependencies:
-
-```bash
-git clone https://github.com/Blahah/command_line_bootcamp.git
-cd command_line_bootcamp
-npm install
-```
-
-Make your changes (if any) and then deploy:
-
-```bash
-npm run deploy
-```
-
-### setup and run the docker server backend
-
-Instructions for running on digitalocean:
-
-Create a new instance of the Ubuntu+docker image.
-
-then ssh in and...
-
-```bash
-# keep it running
-tmux
-
-# need some basics
-apt-get update
-apt-get install -y build-essential g++
-
-# install and set up nvm and node
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
-source ~/.bashrc
-
-# some dependencies don't work with node 1+, so stick with 0.12
-nvm install 0.12
-nvm use 0.12
-
-# major dependencies
-npm install --global docker-browser-server
-
-# setup docker
-docker pull ubuntu
-git clone https://github.com/Blahah/command_line_bootcamp.git
-cd command_line_bootcamp
-docker build -t "command_line_bootcamp" .
-docker-browser-server command_line_bootcamp -p 8080
+git clone https://github.com/bocajnotnef/command_line_bootcamp
+bash command_line_bootcamp/init.sh
 ```
 
 ### cleaning up long-running containers
