@@ -21,8 +21,8 @@ docker-broswer-server command_line_bootcamp -p 8080
 
 cd ..
 
-git clone https://github.com/bocajnotnef/command_line_bootcamp.git
 cd command_line_bootcamp
 npm install
 
-npm run
+npm run build && npm run fixcolor && npm run render
+# now serve the directory!
