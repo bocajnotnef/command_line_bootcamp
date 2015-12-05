@@ -4,6 +4,9 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | b
 pwd
 source ~/.bashrc
 
+export NVM_DIR="/home/vagrant/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # some dependencies don't work with node 1+, so stick with 0.12
 nvm install 0.12
 nvm use 0.12
@@ -22,4 +25,4 @@ git clone https://github.com/bocajnotnef/command_line_bootcamp.git
 cd command_line_bootcamp
 npm install
 
-npm run deploy
+npm run

@@ -6,6 +6,7 @@
   "scripts": {
     "render": "submarine markdown guide --template=guide.html",
     "deploy": "gh-pages-deploy",
+    "dev": "dev-deploy",
     "build": "browserify index.js -o bundle.js && browserify terminal.js -o terminal-bundle.js",
     "fixcolor": "sed 's/eeeeec/333333/g' terminal-bundle.js > terminal-bundle.fjs && mv terminal-bundle.fjs terminal-bundle.js",
     "start": "beefy index.js:bundle.js terminal.js:terminal-bundle.js"
@@ -21,7 +22,7 @@
       "fixcolor",
       "render"
     ],
-    "noprompt": "true"
+    "noprompt": "false"
   },
   "dependencies": {
     "adventure-time": "^1.0.0",
