@@ -12,7 +12,7 @@ if (!qs.id) {
 var opts = {
   guide: 'guide/',
   console: 'terminal.html',
-  server: "localhost:8080/command_line_bootcamp",
+  server: "46.101.11.144:8080",
   id: qs.id
 }
 
